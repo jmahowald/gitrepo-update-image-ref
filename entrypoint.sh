@@ -17,8 +17,8 @@ else
     git pull
 fi
 
-git config --local user.email $INPUT_GIT_COMMITTER_EMAIL
-git config --local user.name $INPUT_GIT_COMMMITTER_NAME
+git config --local user.email $INPUT_GIT_COMMITER_EMAIL
+git config --local user.name $INPUT_GIT_COMMITER_NAME
 
 
 yq write -i $INPUT_REMOTE_REPO_PATH $INPUT_VARIABLE_NAME $GITHUB_SHA
