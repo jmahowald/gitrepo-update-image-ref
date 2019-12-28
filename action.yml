@@ -1,0 +1,29 @@
+# action.yml
+name: 'Update Image Ref'
+description: 'Updates in infra repository the reference of the image to be used'
+inputs:
+  remote-repo-name:  # id of input
+    description: 'repo to update'
+    required: true
+  remote-repo-path:  # id of input
+    description: 'file to  update'
+    required: true
+  remote-repo-branch:
+    default: develop
+  variable-name:  # id of input
+    description: 'which entry to update'
+    required: true
+  github-user: 
+    description: 'github user for the given token'
+    required: true # todo get build uers
+  github-token:  
+    description: 'You probably need a custom token since the automated github tokens won't have rights to push to another repo'
+    required: true
+  git-commiter-email:
+    required: true
+  git-commiter-name:
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
