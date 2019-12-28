@@ -23,7 +23,9 @@ inputs:
     required: true
   git_commiter_name:
     required: true
-
+  only_if_branch:
+    description: 'Don't push unless you're on the specified branch'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
