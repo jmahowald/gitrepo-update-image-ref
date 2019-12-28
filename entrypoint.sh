@@ -10,8 +10,6 @@ if [ "$BRANCH_NAME" != "$INPUT_ONLY_IF_BRANCH" ]; then
     exit 0
 fi
 
-only_if_branch
-
 
 export GITHUB_TOKEN=$INPUT_GITHUB_TOKEN
 export GITHUB_USER=${GITHUB_USER:-$INPUT_GITHUB_USER}
