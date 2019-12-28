@@ -3,12 +3,12 @@
 export GITHUB_TOKEN=${GITHUB_TOKEN:-INPUT_GITHUB_TOKEN}
 export GITHUB_USER=${GITHUB_USER:-INPUT_GITHUB_USER}
 export INPUT_REMOTE_REPO_BRANCH=${INPUT_REMOTE_REPO_BRANCH:-develop}
-repo_dir=$(echo $INPUT_REMOTE_REPO  | cut -d "/" -f 2)
+repo_dir=$(echo $INPUT_REMOTE_REPO_NAME  | cut -d "/" -f 2)
 
 env
 if [ ! -d $repo_dir ]; then
     git clone --depth 1 \
-    https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$INPUT_REMOTE_REPO.git \
+    https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$INPUT_REMOTE_REPO_NAME.git \
     -b $INPUT_REMOTE_REPO_BRANCH
     pushd $repo_dir
 else
