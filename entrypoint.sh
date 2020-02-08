@@ -3,9 +3,9 @@
 
 
 
-export BRANCH_NAME=${GITHUB_REF##*/}
+# export BRANCH_NAME=${GITHUB_REF##*/}
 
-if [ "$BRANCH_NAME" != "$INPUT_ONLY_IF_BRANCH" ]; then
+if [ -n "$INPUT_ONLY_IF_BRANCH" ] && [ "$BRANCH_NAME" != "$INPUT_ONLY_IF_BRANCH" ]; then
     echo "current branch is not $INPUT_ONLY_IF_BRANCH.  Ignoring "
     exit 0
 fi
